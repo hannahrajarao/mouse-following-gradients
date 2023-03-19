@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mouse Tracker</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            #gradient {
+                background-image: black, url(astronomy.jpg);
+                width: 100%;
+                height: 100vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="gradient" onmousemove="changeCenter(event)"></div>
+        <script>
+            function changeCenter(event) {
+                let x = event.offsetX;
+                let y = event.offsetY;
+                document.getElementById('gradient').style.backgroundImage = 'radial-gradient(circle at '+x+'px '+y+'px '+',transparent,black 150px), url(astronomy.jpg)';
+            }
+        </script>
+    </body>
+</html>
